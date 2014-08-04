@@ -22,7 +22,7 @@ describe CategoriesController do
 
     describe "GET new" do
       it "redirects user to the login page" do
-        get :new, {}, valid_session
+        get :new, valid_attributes, valid_session
         expect(response).to redirect_to(new_user_session_path)
       end
     end
