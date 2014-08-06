@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
   expose_decorated(:reviews, ancestor: :product)
 
   def index
+    @category = Category.find(params[:category_id])
+    @products = @category.products.all.limit(5)
   end
 
   def show
