@@ -11,5 +11,7 @@ namespace :db do
 		150.times do
 			FactoryGirl.create :review
 		end
+
+		FactoryGirl.create :user
 	end
 end
