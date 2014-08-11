@@ -34,7 +34,7 @@ group :test do
 end
 
 gem 'jquery-rails'
-gem 'rmagick'
+gem 'rmagick', '~> 2.13.2', :platforms => :ruby
 gem 'carrierwave'
 gem 'simple_enum'
 gem 'tzinfo-data'
