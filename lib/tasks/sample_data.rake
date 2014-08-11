@@ -13,5 +13,6 @@ namespace :db do
 		end
 
 		FactoryGirl.create :user
+		FactoryGirl.create(:user, firstname: 'Mark', lastname: 'Kowalsky', email: 'test@example.com', password: 'password123', admin: true)
 	end
 end

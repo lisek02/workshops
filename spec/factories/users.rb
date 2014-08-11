@@ -6,6 +6,5 @@ FactoryGirl.define do
     lastname 'Doe'
     email 'test@test.com'
     password 'password123'
-    admin true
   end
 end
