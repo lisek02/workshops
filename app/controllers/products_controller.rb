@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :signed_in, only: [:create, :update]
-  before_action :another_user_signed, only: [:edit, :update]
+  before_action :another_user_signed, only: [:edit, :update, :destroy]
   #before_action :authenticate_user!, except: [:index, :show, :destroy]
 
   expose(:category)
@@ -10,8 +10,8 @@ class ProductsController < ApplicationController
   expose_decorated(:reviews, ancestor: :product)
 
   def index
-    @category = Category.find(params[:category_id])
-    @products = @category.products.all.limit(5)
+    #@category = Category.find(params[:category_id])
+    #@products = @category.products.all.limit(5)
   end
 
   def show
@@ -60,7 +60,7 @@ class ProductsController < ApplicationController
     def another_user_signed
       unless current_user == Product.find(params[:id]).user
         redirect_to category_product_path
-        flash.now[:error] = 'You are not allowed to edit this product.'
+        flash[:error] = 'You are not allowed to edit this product.'
       end
     end
 end
