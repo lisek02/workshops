@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   end
 
   root 'categories#index'
+  #get '/categories/:category_id/products', to: 'products#index'
   devise_for :users
 end

@@ -7,6 +7,14 @@
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
+    %title Netguru Workshops
 
   %body
-    = yield
+    .header
+      = render :partial => 'layouts/header'
+    .jumbotron
+      .container
+        %h1 Sample project prepared for Netguru Workshops
+    .container
+      .containter-fluid
+        = yield
