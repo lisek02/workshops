@@ -1,17 +1,25 @@
-%p#notice= notice
+=unless notice.nil?
+  %p#notice= p(notice)
 
+.panel.panel-default
+  .panel-heading
+    %h3
+      %b Name:
+      = category.name
+
+  %table.table
+    - category.products.each do |product|
+      %tr
+        %td= product.title
+        %td= product.description
+        %td= product.price
+
+%br
 %p
-  %b Name:
-  = category.name
+  .bordered-form
+    %h3 New product
+    = render 'products/form'
 
-%p
-  - category.products.each do |product|
-    = product.title
-
-%p
-  %h3 New product
-  = render 'products/form'
-
-= link_to 'Edit', edit_category_path(category)
-\|
-= link_to 'Back', categories_path
+    = link_to 'Edit', edit_category_path(category)
+    \|
+    = link_to 'Back', categories_path

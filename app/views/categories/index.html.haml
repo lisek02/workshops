@@ -1,19 +1,24 @@
-%h1 Listing categories
+.panel.panel-default
+  .panel-heading
+    %h3 Listing categories
 
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
-  - categories.each do |category|
+  %table.table
     %tr
-      %td= category.name
-      %td= link_to 'Show', category
-      %td= link_to 'Edit', edit_category_path(category)
-      %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+      %th Name
+      %th
+      %th
+      %th
+
+    - categories.each do |category|
+      %tr
+        %td= category.name
+        %td
+          %button.btn.btn-primary= link_to 'Show', category
+        %td
+          %button.btn.btn-warning= link_to 'Edit', edit_category_path(category)
+        %td
+          %button.btn.btn-danger= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Category', new_category_path
+%button.btn.btn-default= link_to 'New Category', new_category_path
