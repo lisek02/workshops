@@ -12,7 +12,9 @@ namespace :db do
 			FactoryGirl.create :review
 		end
 
-		FactoryGirl.create :user
+		20.times do
+			FactoryGirl.create :user
+		end
 		FactoryGirl.create(:user, firstname: 'Mark', lastname: 'Kowalsky', email: 'test@example.com', password: 'password123', admin: true)
 	end
 end
