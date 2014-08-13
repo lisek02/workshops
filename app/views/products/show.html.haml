@@ -1,23 +1,26 @@
 %p#notice= notice
 %p#error= flash[:error]
 
-%p
-  %b Title:
-  = product.title
-%p
-  %b Description:
-  = product.description
-%p
-  %b Price:
-  = product.price
+%table.table
+  %tr
+    %td Title:
+    %td= product.title
 
-%p
-  %b Category
-  = product.category.name
+  %tr
+    %td Description:
+    %td= product.description
+  %tr
+    %td Price:
+    %td= product.price
+
+  %tr
+    %td Category
+    %td= product.category.name
 
 %p
   %b Reviews
-  = render 'reviews/form'
+  .bordered-form-review
+    = render 'reviews/form'
 
 
 = render reviews
