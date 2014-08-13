@@ -43,21 +43,11 @@
 	}
 }
 
-.footer {
-	background-color: #eee;
-    position: relative;
-    margin-top: -150px; /* negative value of footer height */
-    height: 150px;
-    clear:both;
-    padding-top:20px; 
-}
-
 /*Bootstrap customizing*/
 $pear: #91be47;
 
 body {
 	background-color: #dadada;
-	padding-bottom: 150px
 }
 
 .navbar-inverse {
