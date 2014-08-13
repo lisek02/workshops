@@ -16,11 +16,8 @@
         %td= product.title
         %td= product.description
         %td= product.price
-        %td
-          %button.btn.btn-primary= link_to 'Show', category_product_path(product.category, product)
-        %td
-          %button.btn.btn-warning= link_to 'Edit', edit_category_product_path(product.category, product)
-        %td
-          %button.btn.btn-danger= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
+        %td= button_to 'Show', category_product_path(product.category, product), method: :get, class: 'btn btn-primary'
+        %td= button_to 'Edit', edit_category_product_path(product.category, product), method: :get, class: 'btn btn-warning'
+        %td= button_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 
 %br

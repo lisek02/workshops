@@ -17,6 +17,7 @@
 @import "bootstrap";
 
 .bordered-form {
+	background-color: #eee;
 	max-width: 300px;
 	border: 2px solid #bbbbbb;
 	-webkit-border-radius: 6px;
@@ -30,6 +31,7 @@
 }
 
 .bordered-form-review {
+	background-color: #eee;
 	border: 1px solid #d6d6d6;
 	-webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -41,6 +43,56 @@
 	}
 }
 
-#error_explanation {
-	
+/*Bootstrap customizing*/
+$pear: #91be47;
+
+body {
+	background-color: #dadada;
 }
+
+.navbar-inverse {
+	background-color: $pear;
+	border: none;
+	a {
+		color: #fff!important;
+		&:hover {
+			color: #cacaca;
+		}
+	}
+}
+
+.navbar {
+	border-radius: 0px;
+	margin-bottom: 0px;
+	li:hover {
+		background-color: #6c9923;
+
+	}
+}
+
+.jumbotron {
+	background-color: #eee;
+	text-align: center;
+}
+
+a {
+  color: #000;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #333333;
+    background-color: transparent;
+    text-decoration: none;
+  }
+}
+
+table {
+	background-color: #fcfbfb;
+
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td {
+	background-color: #eee;		
+}
+
