@@ -17,6 +17,13 @@
     %td Category
     %td= product.category.name
 
+  %tr
+    %td Average rating
+    - if product.average_rating
+      %td= product.average_rating.round(2)
+    - else
+      %td= 0
+
 %p
   %b Reviews
   .bordered-form-review
