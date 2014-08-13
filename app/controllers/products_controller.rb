@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :signed_in, only: [:create, :update]
+  before_action :signed_in, only: [:create, :update, :edit]
   before_action :another_user_signed, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show, :destroy]
 

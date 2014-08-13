@@ -155,6 +155,7 @@ describe ProductsController do
       describe "with valid params" do
         it "updates the requested product" do
           product = Product.create! valid_attributes
+          product.update_attributes user: user
           Product.any_instance.should_receive(:update).with({ "title" => "MyString" })
           put :update, { id: product.to_param, product: { "title" => "MyString" }, category_id: category.to_param }, valid_session
         end
@@ -182,6 +183,7 @@ describe ProductsController do
 
         it "re-renders the 'edit' template" do
           product = Product.create! valid_attributes
+          product.update_attributes user: user
           Product.any_instance.stub(:save).and_return(false)
           put :update, { id: product.to_param, product: { "title" => "invalid value" }, category_id: category.to_param }, valid_session
           response.should render_template("edit")
